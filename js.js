@@ -15,7 +15,7 @@ node.addEventListener("keyup", function (event) {
 
 function goFullScreen() {
   location.href =
-    "https://www.youtube.com/redirect?q=https://darkn3ss.com/abettertheater/";
+    "https://www.youtube.com/redirect?q=https://abettertheater.nz/";
 }
 
 function showOverlay() {
