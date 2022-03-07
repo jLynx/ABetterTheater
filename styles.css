@@ -27,6 +27,28 @@ body {
   overflow: visible; */
 }
 
+.loading {
+  width: 10%;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:auto;
+  z-index: 999;
+}
+
+.shadow{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:auto;
+  background-color: rgb(31 31 31 / 89%);
+  display: none;
+}
+
 #overlay {
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */

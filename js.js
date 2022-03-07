@@ -28,3 +28,7 @@ function hide(e) {
 function show(e) {
   document.getElementById(e).style.display = "block";
 }
+
+function loading() {
+  show("shadow");
+}
