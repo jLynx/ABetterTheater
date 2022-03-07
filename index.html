@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <title>ABetterTheater.nz - Full Screen Apps</title>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="c.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <!-- ToDo: 
+    
+    - Add loading icon on click as you cant see when the browser is navigating 
+    - Fix layout on mobile phone
+    - Have a message that shows up if not using a tesla browser
+    - Fix all the HTML and CSS issues
+    - Buy ABetterTheater.nz domain and setup with serverless hosting on CloudFlare
+    - logo loading svg thats on the page already
+    - Setting cog bottom right to configure what services to show
+
+  
+  -->
+  <body>
+    <div class="container">
+      <a href="https://app.plex.tv">
+        <img src="img/plex.svg" class="logo" />
+      </a>
+      <a href="http://www.hulu.com/">
+        <img src="img/hulu.svg" class="logo" />
+      </a>
+      <a href="https://www.primevideo.com/">
+        <img src="img/prime.svg" class="logo" />
+      </a>
+      <a href="https://netflix.com/">
+        <img src="img/netflix.svg" class="logo" />
+      </a>
+      <a href="http://www.disneyplus.com">
+        <img src="img/disneyplus.svg" class="logo" />
+      </a>
+      <a href="https://www.neontv.co.nz/">
+        <img src="img/neon.svg" class="logo" />
+      </a>
+      <a href="https://www.tvnz.co.nz/">
+        <img src="img/tvnz.svg" class="logo" />
+      </a>
+      <a href="https://www.sparksport.co.nz/">
+        <img src="img/sparksport.svg" class="logo" />
+      </a>
+      <a href="https://www.skygo.co.nz/">
+        <img src="img/skygo.svg" class="logo" />
+      </a>
+      <!-- <a onclick="showOverlay()">
+        <img width="100%" src="https://www.abettertheater.com/chromium.jpg" />
+      </a> -->
+    </div>
+    <div id="overlay" onClick="hide('overlay')">
+      <input
+        type="text"
+        id="path"
+        value="https://"
+        onClick="window.event.stopPropagation();"
+      />
+    </div>
+
+    <div id="overlayfull" style="display: none; text-align: center">
+      <button class="button-basic" onClick="goFullScreen();">
+        GO FULLSCREEN
+      </button>
+    </div>
+
+    <script type="text/javascript" src="j2.js"></script>
+  </body>
+</html>

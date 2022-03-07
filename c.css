@@ -1,0 +1,81 @@
+body {
+  width: 85%;
+  margin: 30px auto;
+  font-family: sans-serif;
+  background: black;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.container > a {
+  width: 15%;
+  margin: 50px;
+  text-decoration: none;
+}
+
+.logo {
+  /* width: calc(50% - 4px); */
+  /* width: 100%;
+  display: block;
+  margin: auto; */
+  /* height: 50px;
+  overflow: visible; */
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+  padding: 70px 0;
+  text-align: center;
+}
+
+#overlayfullscreen {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+  padding: 150px 0;
+  text-align: center;
+}
+#url {
+  z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+button {
+  margin-bottom: 2em;
+}
+
+.button-basic {
+  background-color: black;
+  border-color: white;
+  border: 1px solid white;
+  color: white;
+  padding: 0.55em 0.55em;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1em;
+  display: inline-block;
+  width: 20%; /* to test the test-align property */
+  cursor: pointer;
+}
