@@ -1,4 +1,4 @@
-if (document.referrer.match(/^https:\/\/www\.youtube\.com/) || true) {
+if (document.referrer.match(/^https:\/\/www\.youtube\.com/)) {
   hide("overlayfull");
 } else {
   show("overlayfull");
