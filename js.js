@@ -1,6 +1,5 @@
 if (document.referrer.match(/^https:\/\/www\.youtube\.com/)) {
   hide("overlayfull");
-  document.getElementById("web").style = "margin-bottom: 0;";
 } else {
   show("overlayfull");
 }
