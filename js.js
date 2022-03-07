@@ -23,13 +23,15 @@ function showOverlay() {
   node.focus();
   node.setSelectionRange(200, 200);
 }
+
+
+function loading() {
+  show("shadow");
+}
+
 function hide(e) {
   document.getElementById(e).style.display = "none";
 }
 function show(e) {
   document.getElementById(e).style.display = "block";
-}
-
-function loading() {
-  show("shadow");
 }

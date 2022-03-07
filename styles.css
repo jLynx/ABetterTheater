@@ -19,74 +19,42 @@ body {
   text-align: center;
 }
 
-.logo {
-  /* width: calc(50% - 4px); */
-  /* width: 100%;
-  display: block;
-  margin: auto; */
-  /* height: 50px;
-  overflow: visible; */
-}
-
 .loading {
   width: 10%;
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  margin:auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
   z-index: 999;
 }
 
-.shadow{
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  margin:auto;
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
   background-color: rgb(31 31 31 / 89%);
   display: none;
 }
 
 #overlay {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
+  background-color: rgb(31 31 31 / 89%);
+  z-index: 2;
+  cursor: pointer;
   padding: 70px 0;
   text-align: center;
-}
-
-#overlayfullscreen {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
-  padding: 150px 0;
-  text-align: center;
-}
-#url {
-  z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
-}
-
-button {
-  margin-bottom: 2em;
 }
 
 .button-basic {
@@ -99,6 +67,7 @@ button {
   text-decoration: none;
   font-size: 1em;
   display: inline-block;
-  width: 20%; /* to test the test-align property */
+  width: 20%;
   cursor: pointer;
+  text-transform: uppercase;
 }
