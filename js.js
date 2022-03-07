@@ -7,7 +7,8 @@ if (document.referrer.match(/^https:\/\/www\.youtube\.com/)) {
 const node = document.getElementById("path");
 node.addEventListener("keyup", function (event) {
   if (event.key === "Enter") {
-    //show("loader");
+    hide("overlay");
+    show("shadow");
     location.href = node.value;
   }
 });
