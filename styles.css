@@ -15,7 +15,8 @@ body {
 
 .container > a, .container > button {
   width: 15%;
-  margin: 45px;
+  margin: 5%; 
+  /* margin: 45px;  */
   text-decoration: none;
   text-align: center;
 }
@@ -52,7 +53,6 @@ body {
   text-decoration: none;
   font-size: 1em;
   display: inline-block;
-  width: 20%;
   cursor: pointer;
   text-transform: uppercase;
 }
