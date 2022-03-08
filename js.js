@@ -16,8 +16,8 @@ getIPDetails();
 const node = document.getElementById("path");
 node.addEventListener("keyup", function (event) {
   if (event.key === "Enter") {
-    hide("overlay");
-    show("shadow");
+    closeDialog("overlay");
+    showDialog("shadow");
     location.href = node.value;
   }
 });
@@ -27,16 +27,16 @@ function goFullScreen() {
 }
 
 function showOverlay() {
-  show("overlay");
+  showDialog("overlay");
   node.focus();
   node.setSelectionRange(200, 200);
 }
 
 function loading(url, geo) {
   if (geo && country !== "NZ") {
-    show("geoModal");
+    showDialog("geoModal");
   } else {
-    show("shadow");
+    showDialog("shadow");
     location.href = url;
   }
 }
@@ -63,7 +63,7 @@ function openEditModal() {
       );
   }
 
-  show("editModal");
+  showDialog("editModal");
 }
 
 function hideService(service) {
@@ -88,6 +88,31 @@ function getIPDetails() {
   xhttp.open("GET", "https://ip-api.io/json/", true);
   xhttp.send();
 }
+
+const showDialog = (element) => {
+  show(element);
+  document.getElementById(element).classList.add("show");
+  const scrollY = document.documentElement.style.getPropertyValue("--scroll-y");
+  const body = document.body;
+  body.style.position = "fixed";
+  body.style.top = `-${scrollY}`;
+};
+
+const closeDialog = (element) => {
+  hide(element);
+  const body = document.body;
+  const scrollY = body.style.top;
+  body.style.position = "";
+  body.style.top = "";
+  window.scrollTo(0, parseInt(scrollY || "0") * -1);
+  document.getElementById(element).classList.remove("show");
+};
+window.addEventListener("scroll", () => {
+  document.documentElement.style.setProperty(
+    "--scroll-y",
+    `${window.scrollY}px`
+  );
+});
 
 function hide(e) {
   document.getElementById(e).style.display = "none";

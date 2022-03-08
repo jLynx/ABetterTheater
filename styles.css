@@ -1,6 +1,5 @@
 body {
-  width: 85%;
-  margin: 30px auto;
+  margin: 0;
   font-family: sans-serif;
   background: black;
   color: white;
@@ -11,13 +10,14 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  width: 85%;
+  margin: 30px auto;
 }
 
 .container > a,
 .container > button {
   width: 15%;
   margin: 5%;
-  /* margin: 45px;  */
   text-decoration: none;
   text-align: center;
 
@@ -39,7 +39,9 @@ body {
 }
 
 .shadow {
-  position: absolute;
+  position: fixed;
+  justify-content: center;
+  display: flex;
   top: 0;
   left: 0;
   right: 0;
@@ -96,8 +98,6 @@ body {
   bottom: 0px;
   padding-bottom: 25px;
   width: 100%;
-  /* background-color: red; */
-  color: white;
   text-align: center;
 }
 
@@ -147,4 +147,10 @@ body {
   text-align: center;
   padding: 100px;
   display: none;
+}
+
+#geoModal.show {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }

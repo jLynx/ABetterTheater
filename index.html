@@ -45,10 +45,6 @@
     </script>
   </head>
   <body>
-    
-    <div class="shadow" id="shadow">
-      <img src="img/loading.svg" class="loading" />
-    </div>
     <p id="teslaBrowser" style="text-align: center; display: none">
       This website is made for your Tesla browser. Open it on there to get the
       full experience!
@@ -64,7 +60,7 @@
         />
       </button>
     </div>
-    <div id="overlay" onClick="hide('overlay')">
+    <div id="overlay" onClick="closeDialog('overlay')">
       <input
         type="text"
         id="path"
@@ -82,6 +78,10 @@
       </div>
     </div>
 
+    <div class="shadow" id="shadow">
+      <img src="img/loading.svg" class="loading" />
+    </div>
+
     <div id="editModal">
       <p>
         Select what streaming servies you would like to be hidden from your
@@ -93,10 +93,10 @@
       <button class="doneBtn" onClick="window.location.reload();">Done</button>
     </div>
 
-    <div id="geoModal" onClick="hide('geoModal')">
+    <div id="geoModal" onClick="closeDialog('geoModal')">
       <h3>
-        This service won't work unless you are connected to WiFi. Please connect to your
-        phone's hotspot and try again.
+        This service won't work unless you are connected to WiFi. Please connect
+        to your phone's hotspot and try again.
       </h3>
       <br />
       <br />
@@ -108,8 +108,8 @@
         Zealand. Because of this even though you are physically in New Zealand,
         the website you are trying to access thinks you are in Australia and
         won't let you stream. To get around this you will need to connect your
-        car to WiFi and then this service will work. Try tethering to your phone's
-        hotspot.
+        car to WiFi and then this service will work. Try tethering to your
+        phone's hotspot.
       </p>
       <br />
     </div>
