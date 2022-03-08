@@ -23,8 +23,7 @@ node.addEventListener("keyup", function (event) {
 });
 
 function goFullScreen() {
-  location.href =
-    "https://www.youtube.com/redirect?q=https://abettertheater.nz/";
+  location.href = `https://www.youtube.com/redirect?q=https://${document.location.host}`;
 }
 
 function showOverlay() {
