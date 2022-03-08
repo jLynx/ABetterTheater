@@ -85,7 +85,7 @@ function getIPDetails() {
       country = JSON.parse(xhttp.responseText).country;
     }
   };
-  xhttp.open("GET", "/country", true);
+  xhttp.open("GET", "/country/", true);
   xhttp.send();
 }
 
