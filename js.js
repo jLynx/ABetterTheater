@@ -84,6 +84,7 @@ function getIPDetails() {
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       country = JSON.parse(xhttp.responseText).country_code;
+      console.log(country);
     }
   };
   xhttp.open("GET", "https://ip-api.io/json/", true);
