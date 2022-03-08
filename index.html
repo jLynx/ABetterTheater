@@ -45,7 +45,7 @@
     </script>
   </head>
   <body>
-    <button class="editBtn" onClick="openEditModal();">Edit</button>
+    
     <div class="shadow" id="shadow">
       <img src="img/loading.svg" class="loading" />
     </div>
@@ -73,10 +73,13 @@
       />
     </div>
 
-    <div id="overlayfull" style="display: none; text-align: center">
-      <button class="button-basic" onClick="goFullScreen();">
-        Go fullscreen
-      </button>
+    <div class="footer">
+      <button class="editBtn" onClick="openEditModal();">Edit</button>
+      <div id="overlayfull" style="display: none; text-align: center">
+        <button class="button-basic" onClick="goFullScreen();">
+          Go fullscreen
+        </button>
+      </div>
     </div>
 
     <div id="editModal">
@@ -92,8 +95,8 @@
 
     <div id="geoModal" onClick="hide('geoModal')">
       <h3>
-        This service wont work unless you are connected to WiFi. Connect to your
-        phones hotspot and try again.
+        This service won't work unless you are connected to WiFi. Please connect to your
+        phone's hotspot and try again.
       </h3>
       <br />
       <br />
@@ -101,20 +104,15 @@
       <p>
         <b>Why???</b><br />We have detected you are using your Tesla's LTE
         connection. Your Tesla's data connection is actually coming from
-        Australia and this service you are trying to access is geo locked to New
-        Zealand. Becuase of this even though you are physically in New Zealand,
+        Australia and this service you are trying to access is geo-locked to New
+        Zealand. Because of this even though you are physically in New Zealand,
         the website you are trying to access thinks you are in Australia and
-        wont let you stream. To get around this you will need to connect your
-        car to WiFi and this service will work. Try tethering to your phones
+        won't let you stream. To get around this you will need to connect your
+        car to WiFi and then this service will work. Try tethering to your phone's
         hotspot.
       </p>
       <br />
     </div>
-
-    <!-- 
-      ToDo:
-      - country detection. If AU then say they will need to hotspot for it to work
-     -->
 
     <script>
       const baseServices = [
@@ -179,18 +177,42 @@
           name: "Sky Go",
           geo: true,
         },
-        // {
-        //   url: "https://www.skysportnow.co.nz",
-        //   image: "skysportnow",
-        //   name: "Sky Sport Now",
-        //   geo: true,
-        // },
-        // {
-        //   url: "https://www.threenow.co.nz",
-        //   image: "threenow",
-        //   name: "Three now",
-        //   geo: true,
-        // },
+        {
+          url: "https://www.skysportnow.co.nz",
+          image: "skysportnow",
+          name: "Sky Sport Now",
+          geo: true,
+        },
+        {
+          url: "https://www.threenow.co.nz",
+          image: "threenow",
+          name: "Three now",
+          geo: true,
+        },
+        {
+          url: "https://www.crunchyroll.com",
+          image: "crunchyroll",
+          name: "Crunchyroll",
+          geo: false,
+        },
+        {
+          url: "https://www.funimation.com",
+          image: "funimation",
+          name: "Funimation",
+          geo: false,
+        },
+        {
+          url: "https://music.youtube.com",
+          image: "youtubemusic",
+          name: "YouTube Music",
+          geo: false,
+        },
+        {
+          url: "https://tv.apple.com/",
+          image: "appletvplus",
+          name: "Apple TV +",
+          geo: false,
+        },
       ];
 
       var services = baseServices;

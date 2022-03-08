@@ -90,6 +90,17 @@ body {
   border-radius: 5px;
 }
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0px;
+  padding-bottom: 25px;
+  width: 100%;
+  /* background-color: red; */
+  color: white;
+  text-align: center;
+}
+
 #overlay {
   position: fixed;
   display: none;

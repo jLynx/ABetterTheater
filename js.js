@@ -1,7 +1,7 @@
 var country = "Loading";
 if (
   document.referrer.match(/^https:\/\/www\.youtube\.com/) ||
-  window.innerWidth === 1111
+  window.innerWidth === 1112
 ) {
   hide("overlayfull");
 } else {
