@@ -13,9 +13,10 @@ body {
   justify-content: center;
 }
 
-.container > a, .container > button {
+.container > a,
+.container > button {
   width: 15%;
-  margin: 5%; 
+  margin: 5%;
   /* margin: 45px;  */
   text-decoration: none;
   text-align: center;
@@ -57,6 +58,32 @@ body {
   text-transform: uppercase;
 }
 
+.editBtn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.doneBtn {
+  background-color: #008cba;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 #overlay {
   position: fixed;
   display: none;
@@ -78,4 +105,16 @@ body {
   border: none;
   padding: 0;
   cursor: pointer;
+}
+
+#editModal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgb(31 31 31 / 89%);
+  text-align: center;
+  display: none;
 }

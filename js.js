@@ -31,9 +31,53 @@ function loading() {
   show("shadow");
 }
 
+function openEditModal() {
+  if (!localStorage.getItem("hidden")) {
+    localStorage.setItem("hidden", "[]");
+  }
+  var hiddenItems = JSON.parse(localStorage.getItem("hidden"));
+  console.log(hiddenItems);
+
+  for (const obj of baseServices.reverse()) {
+    var isChecked = hiddenItems.includes(obj["image"]);
+
+    document
+      .getElementById("serviceItems")
+      .insertAdjacentHTML(
+        "afterbegin",
+        `<input type="checkbox" id="${obj["image"]}" name="${
+          obj["image"]
+        }" value="${obj["image"]}" onclick="hideService(this);" ${
+          isChecked && "checked"
+        } /><label for="${obj["image"]}"> ${obj["name"]}</label><br />`
+      );
+  }
+
+  show("editModal");
+}
+
+function hideService(service) {
+  var hiddenItems = JSON.parse(localStorage.getItem("hidden"));
+  if (service.checked) {
+    hiddenItems.push(service.value);
+  } else {
+    hiddenItems = hiddenItems.filter((x) => x !== service.value);
+  }
+  localStorage.setItem("hidden", JSON.stringify(hiddenItems));
+
+  console.log(hiddenItems);
+}
+
 function hide(e) {
   document.getElementById(e).style.display = "none";
 }
 function show(e) {
   document.getElementById(e).style.display = "block";
+}
+
+function hideTest() {
+  var hiddenItems = ["plex", "skygo"];
+  localStorage.setItem("hidden", JSON.stringify(hiddenItems));
+
+  console.log(hiddenItems);
 }

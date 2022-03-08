@@ -54,10 +54,14 @@
   
   -->
   <body>
+    <button class="editBtn" onClick="openEditModal();">Edit</button>
     <div class="shadow" id="shadow">
       <img src="img/loading.svg" class="loading" />
     </div>
-    <p id="teslaBrowser" style="text-align: center; display: none;">This website is made for your Tesla browser. Open it on there to get the full experience!</p>
+    <p id="teslaBrowser" style="text-align: center; display: none">
+      This website is made for your Tesla browser. Open it on there to get the
+      full experience!
+    </p>
     <div class="container" id="services">
       <button onclick="showOverlay()" id="web">
         <img
@@ -84,20 +88,52 @@
       </button>
     </div>
 
+    <div id="editModal">
+      <p>
+        Select what streaming servies you would like to be hidden from your
+        dashboard
+      </p>
+      <br />
+      <div id="serviceItems"></div>
+      <br />
+      <button class="doneBtn" onClick="window.location.reload();">Done</button>
+    </div>
+
     <script>
-      var services = [
-        { url: "https://app.plex.tv", image: "plex" },
-        { url: "https://www.hulu.com", image: "hulu" },
-        { url: "https://www.primevideo.com", image: "prime" },
-        { url: "https://netflix.com/", image: "netflix" },
-        { url: "https://www.disneyplus.com", image: "disneyplus" },
-        { url: "https://www.youtube.com", image: "youtube" },
-        { url: "https://www.twitch.tv", image: "twitch" },
-        { url: "https://www.neontv.co.nz", image: "neon" },
-        { url: "https://www.tvnz.co.nz", image: "tvnz" },
-        { url: "https://www.sparksport.co.nz", image: "sparksport" },
-        { url: "https://www.skygo.co.nz", image: "skygo" },
+      const baseServices = [
+        { url: "https://app.plex.tv", image: "plex", name: "Plex" },
+        { url: "https://www.hulu.com", image: "hulu", name: "Hulu" },
+        {
+          url: "https://www.primevideo.com",
+          image: "prime",
+          name: "Prime Video",
+        },
+        { url: "https://netflix.com", image: "netflix", name: "Netflix" },
+        {
+          url: "https://www.disneyplus.com",
+          image: "disneyplus",
+          name: "Disney Plus",
+        },
+        { url: "https://www.youtube.com", image: "youtube", name: "YouTube" },
+        { url: "https://www.twitch.tv", image: "twitch", name: "Twitch" },
+        { url: "https://www.neontv.co.nz", image: "neon", name: "NEON" },
+        { url: "https://www.tvnz.co.nz", image: "tvnz", name: "TV NZ" },
+        {
+          url: "https://www.sparksport.co.nz",
+          image: "sparksport",
+          name: "Spark Sport",
+        },
+        { url: "https://www.skygo.co.nz", image: "skygo", name: "Sky Go" },
       ];
+
+      var services = baseServices;
+      if (localStorage.getItem("hidden")) {
+        var hiddenItems = JSON.parse(localStorage.getItem("hidden"));
+        services = baseServices.filter(
+          (x) => !hiddenItems.find((h) => h === x.image)
+        );
+      }
+
       for (const obj of services.reverse()) {
         document
           .getElementById("services")
