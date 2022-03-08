@@ -1,7 +1,7 @@
 //If screen larger than x then in full screen
 if (
   document.referrer.match(/^https:\/\/www\.youtube\.com/) ||
-  window.innerWidth > 1000
+  window.innerWidth > 1111
 ) {
   hide("overlayfull");
 } else {
