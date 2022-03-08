@@ -3,6 +3,9 @@ if (document.referrer.match(/^https:\/\/www\.youtube\.com/)) {
 } else {
   show("overlayfull");
 }
+if (!navigator.userAgent.includes("Tesla")) {
+  show("teslaBrowser");
+}
 
 const node = document.getElementById("path");
 node.addEventListener("keyup", function (event) {
