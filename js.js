@@ -1,8 +1,13 @@
-if (document.referrer.match(/^https:\/\/www\.youtube\.com/)) {
+//If screen larger than x then in full screen
+if (
+  document.referrer.match(/^https:\/\/www\.youtube\.com/) ||
+  window.innerWidth > 1000
+) {
   hide("overlayfull");
 } else {
   show("overlayfull");
 }
+
 if (!navigator.userAgent.includes("Tesla")) {
   show("teslaBrowser");
 }

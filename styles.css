@@ -66,6 +66,7 @@ body {
   background: none;
   border: none;
   padding: 10px;
+  margin-bottom: 25px;
   cursor: pointer;
   color: white;
 }
