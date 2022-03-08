@@ -1,4 +1,4 @@
-//If screen larger than x then in full screen
+var country = "Loading";
 if (
   document.referrer.match(/^https:\/\/www\.youtube\.com/) ||
   window.innerWidth === 1111
@@ -11,6 +11,7 @@ if (
 if (!navigator.userAgent.includes("Tesla")) {
   show("teslaBrowser");
 }
+getIPDetails();
 
 const node = document.getElementById("path");
 node.addEventListener("keyup", function (event) {
@@ -33,7 +34,6 @@ function showOverlay() {
 }
 
 function loading(url, geo) {
-  var country = "NZ";
   if (geo && country !== "NZ") {
     show("geoModal");
   } else {
@@ -83,10 +83,10 @@ function getIPDetails() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      console.log(JSON.parse(xhttp.responseText).country_code);
+      country = JSON.parse(xhttp.responseText).country_code;
     }
   };
-  xhttp.open("GET", "http://ip-api.io/json/", true);
+  xhttp.open("GET", "https://ip-api.io/json/", true);
   xhttp.send();
 }
 
