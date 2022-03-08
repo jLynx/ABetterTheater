@@ -90,31 +90,109 @@
       <button class="doneBtn" onClick="window.location.reload();">Done</button>
     </div>
 
+    <div id="geoModal" onClick="hide('geoModal')">
+      <h3>
+        This service wont work unless you are connected to WiFi. Connect to your
+        phones hotspot and try again.
+      </h3>
+      <br />
+      <br />
+      <br />
+      <p>
+        <b>Why???</b><br />We have detected you are using your Tesla's LTE
+        connection. Your Tesla's data connection is actually coming from
+        Australia and this service you are trying to access is geo locked to New
+        Zealand. Becuase of this even though you are physically in New Zealand,
+        the website you are trying to access thinks you are in Australia and
+        wont let you stream. To get around this you will need to connect your
+        car to WiFi and this service will work. Try tethering to your phones
+        hotspot.
+      </p>
+      <br />
+    </div>
+
+    <input type="text" id="txtIP" placeholder="Enter the ip address" />
+
+    <!-- 
+      ToDo:
+      - country detection. If AU then say they will need to hotspot for it to work
+     -->
+
     <script>
       const baseServices = [
-        { url: "https://app.plex.tv", image: "plex", name: "Plex" },
-        { url: "https://www.hulu.com", image: "hulu", name: "Hulu" },
+        { url: "https://app.plex.tv", image: "plex", name: "Plex", geo: false },
+        {
+          url: "https://www.hulu.com",
+          image: "hulu",
+          name: "Hulu",
+          geo: false,
+        },
         {
           url: "https://www.primevideo.com",
           image: "prime",
           name: "Prime Video",
+          geo: false,
         },
-        { url: "https://netflix.com", image: "netflix", name: "Netflix" },
+        {
+          url: "https://netflix.com",
+          image: "netflix",
+          name: "Netflix",
+          geo: false,
+        },
         {
           url: "https://www.disneyplus.com",
           image: "disneyplus",
           name: "Disney Plus",
+          geo: false,
         },
-        { url: "https://www.youtube.com", image: "youtube", name: "YouTube" },
-        { url: "https://www.twitch.tv", image: "twitch", name: "Twitch" },
-        { url: "https://www.neontv.co.nz", image: "neon", name: "NEON" },
-        { url: "https://www.tvnz.co.nz", image: "tvnz", name: "TV NZ" },
+        {
+          url: "https://www.youtube.com",
+          image: "youtube",
+          name: "YouTube",
+          geo: false,
+        },
+        {
+          url: "https://www.twitch.tv",
+          image: "twitch",
+          name: "Twitch",
+          geo: false,
+        },
+        {
+          url: "https://www.neontv.co.nz",
+          image: "neon",
+          name: "NEON",
+          geo: false,
+        },
+        {
+          url: "https://www.tvnz.co.nz",
+          image: "tvnz",
+          name: "TV NZ",
+          geo: true,
+        },
         {
           url: "https://www.sparksport.co.nz",
           image: "sparksport",
           name: "Spark Sport",
+          geo: true,
         },
-        { url: "https://www.skygo.co.nz", image: "skygo", name: "Sky Go" },
+        {
+          url: "https://www.skygo.co.nz",
+          image: "skygo",
+          name: "Sky Go",
+          geo: true,
+        },
+        {
+          url: "https://www.skysportnow.co.nz",
+          image: "skysportnow",
+          name: "Sky Sport Now",
+          geo: true,
+        },
+        {
+          url: "https://www.threenow.co.nz",
+          image: "threenow",
+          name: "Three now",
+          geo: true,
+        },
       ];
 
       var services = baseServices;
@@ -130,7 +208,7 @@
           .getElementById("services")
           .insertAdjacentHTML(
             "afterbegin",
-            `<a href="${obj["url"]}" onClick="loading()"><img src="img/${obj["image"]}.svg" alt="${obj["image"]}" width="100%" height="100%" class="logo" /></a>`
+            `<button href="#" onClick="loading('${obj["url"]}', ${obj["geo"]})"><img src="img/${obj["image"]}.svg" alt="${obj["image"]}" width="100%" height="100%" class="logo" /></button>`
           );
       }
     </script>

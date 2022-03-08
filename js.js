@@ -32,8 +32,14 @@ function showOverlay() {
   node.setSelectionRange(200, 200);
 }
 
-function loading() {
-  show("shadow");
+function loading(url, geo) {
+  var country = "NZ";
+  if (geo && country !== "NZ") {
+    show("geoModal");
+  } else {
+    show("shadow");
+    location.href = url;
+  }
 }
 
 function openEditModal() {
@@ -73,16 +79,20 @@ function hideService(service) {
   console.log(hiddenItems);
 }
 
+function getIPDetails() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log(JSON.parse(xhttp.responseText).country_code);
+    }
+  };
+  xhttp.open("GET", "http://ip-api.io/json/", true);
+  xhttp.send();
+}
+
 function hide(e) {
   document.getElementById(e).style.display = "none";
 }
 function show(e) {
   document.getElementById(e).style.display = "block";
-}
-
-function hideTest() {
-  var hiddenItems = ["plex", "skygo"];
-  localStorage.setItem("hidden", JSON.stringify(hiddenItems));
-
-  console.log(hiddenItems);
 }

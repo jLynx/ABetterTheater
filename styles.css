@@ -20,6 +20,11 @@ body {
   /* margin: 45px;  */
   text-decoration: none;
   text-align: center;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
 .loading {
@@ -117,5 +122,18 @@ body {
   margin: auto;
   background-color: rgb(31 31 31 / 89%);
   text-align: center;
+  display: none;
+}
+
+#geoModal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgb(31 31 31 / 89%);
+  text-align: center;
+  padding: 100px;
   display: none;
 }
