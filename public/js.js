@@ -85,7 +85,7 @@ function getIPDetails() {
       country = JSON.parse(xhttp.responseText).country;
     }
   };
-  xhttp.open("GET", "https://country.abettertheater.nz/", true);
+  xhttp.open("GET", "/api/country", true);
   xhttp.send();
 }
 
