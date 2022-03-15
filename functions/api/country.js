@@ -3,7 +3,7 @@ export async function onRequestGet(request) {
     // country: request.headers.get("cf-ipcountry"),
     // country: "NZ",
     // country: request.request.cf.country,
-    country: request.url,
+    country: request.request.url,
   };
 
   const json = JSON.stringify(data);
