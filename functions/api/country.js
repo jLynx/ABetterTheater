@@ -1,11 +1,11 @@
 export async function onRequestGet(request) {
   const data = {
     // country: request.headers.get("cf-ipcountry"),
-    country: request.cf.country,
+    country: "NZ",
   };
 
   // const json = JSON.stringify(data);
-  const json = JSON.stringify(request);
+  const json = JSON.stringify(request.headers);
 
   // return respondWith(
   //   new Response(json, {
@@ -14,6 +14,7 @@ export async function onRequestGet(request) {
   //     },
   //   })
   // );
+
 
   // const res = await fetch(`https://rickandmortyapi.com/api/character/${params.id}`);
   // const data = await res.json();
