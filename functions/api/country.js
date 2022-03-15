@@ -4,7 +4,8 @@ export async function onRequestGet(request) {
     country: "NZ",
   };
 
-  const json = JSON.stringify(data);
+  // const json = JSON.stringify(data);
+  const json = JSON.stringify(request);
 
   // return respondWith(
   //   new Response(json, {
