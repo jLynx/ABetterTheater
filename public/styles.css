@@ -125,28 +125,33 @@ body {
 }
 
 #editModal {
-  position: absolute;
+  position: fixed;
+  display: none;
+  width: auto;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto;
   background-color: rgb(31 31 31 / 89%);
+  z-index: 2;
+  padding: 70px 0;
   text-align: center;
-  display: none;
 }
 
 #geoModal {
-  position: absolute;
+  position: fixed;
+  display: none;
+  width: auto;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto;
   background-color: rgb(31 31 31 / 89%);
-  text-align: center;
+  z-index: 2;
   padding: 100px;
-  display: none;
+  text-align: center;
 }
 
 #geoModal.show {
