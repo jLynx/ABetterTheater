@@ -1,15 +1,15 @@
-addEventListener("fetch", (event) => {
+export async function onRequestGet(request) {
   const data = {
-    country: event.request.headers.get("cf-ipcountry"),
+    country: request.headers.get("cf-ipcountry"),
   };
 
   const json = JSON.stringify(data);
 
-  return event.respondWith(
+  return respondWith(
     new Response(json, {
       headers: {
         "content-type": "application/json;charset=UTF-8",
       },
     })
   );
-});
+}
