@@ -18,7 +18,7 @@ So the site is as small as i can (currently) get it which means it loads super f
 
 So that means I'm not using any CSS or JS frameworks to save on page size.
 
-Everything is cached (including the HTML) at the edge servers making it serverless. So to explain a bit further, there is 2 levels of caching here, browser caching and edge server caching. I'm using both, so if your local browser doesn't have content, it fetches it from the edge server and if they can't find it or it's expired, only then does it fetch it from the server.
+Everything is cached (including the HTML) at the edge servers making it serverless. So to explain a bit further, there is 2 levels of caching here, browser caching and edge server caching. I'm using both, so if your local browser doesn't have content, it fetches it from the edge server and if they can't find it or it's expired, only then does it fetch it from the server (In this case, CF pages).
 
 Site loads the modules(services) dynamically so it's easy to add new ones. Also means it's easy to hide show specific ones. Instead of just hard coding them in the HTML which would make the page size larger and also would remove the ability to only show the services you want to see.
 
@@ -48,4 +48,4 @@ HSTS to be enabled soon ™
 
 Site is proxited behind CloudFlare's network to protect from DDoS attacks (but on top of that, it's all cached at the edge server's so it never hits my server anyway*)
 
-Update: The site is also now hosted with CF Pages, so its fully serverles now....Well apart from https://country.abettertheater.nz/
+Update: The site is also now hosted with CF Pages, so its fully serverles now. Even the country API is running with CF workers!
