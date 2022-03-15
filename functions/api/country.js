@@ -1,6 +1,7 @@
 export async function onRequestGet(request) {
   const data = {
-    country: request.headers.get("cf-ipcountry"),
+    // country: request.headers.get("cf-ipcountry"),
+    country: "NZ",
   };
 
   const json = JSON.stringify(data);
