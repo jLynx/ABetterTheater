@@ -1,11 +1,13 @@
 export async function onRequestGet(request) {
   const data = {
     // country: request.headers.get("cf-ipcountry"),
-    country: "NZ",
+    // country: "NZ",
+    // country: request.request.cf.country,
+    country: request.url,
   };
 
   // const json = JSON.stringify(data);
-  const json = JSON.stringify(request.headers);
+  const json = JSON.stringify(request);
 
   // return respondWith(
   //   new Response(json, {
