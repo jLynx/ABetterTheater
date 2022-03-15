@@ -6,8 +6,8 @@ export async function onRequestGet(request) {
     country: request.url,
   };
 
-  // const json = JSON.stringify(data);
-  const json = JSON.stringify(request);
+  const json = JSON.stringify(data);
+  // const json = JSON.stringify(request);
 
   // return respondWith(
   //   new Response(json, {
