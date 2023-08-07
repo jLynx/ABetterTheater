@@ -21,6 +21,7 @@
       content="A Better Theater for your Tesla!"
     />
     <meta property="og:url" content="https://abettertheater.nz/" />
+    <meta property="og:image" content="https://abettertheater.nz/img/196.png" />
     <link rel="shortcut icon" href="img/favicon.ico" />
     <link rel="canonical" href="https://abettertheater.nz/" />
     <link rel="stylesheet" href="styles.css?r=11" />
@@ -60,7 +61,7 @@
         />
       </button>
     </div>
-    <div id="overlay" onClick="closeDialog('overlay')">
+    <div class="modal" id="overlay" onClick="closeDialog('overlay')">
       <input
         type="text"
         id="path"
@@ -70,9 +71,13 @@
     </div>
 
     <div class="footer">
-      <button class="editBtn" onClick="openEditModal();">Edit</button>
+      <div class="btnGroup">
+        <button onClick="showDialog('aboutModal')">About</button>
+        <button onClick="openEditModal();">Edit</button>
+      </div>
+
       <div id="overlayfull" style="display: none; text-align: center">
-        <button class="button-basic" onClick="goFullScreen();">
+        <button class="btnBasic" onClick="goFullScreen();">
           Go fullscreen
         </button>
       </div>
@@ -82,7 +87,7 @@
       <img src="img/loading.svg" class="loading" />
     </div>
 
-    <div id="editModal">
+    <div class="modal" id="editModal">
       <p>
         Select what streaming servies you would like to be hidden from your
         dashboard
@@ -90,10 +95,10 @@
       <br />
       <div id="serviceItems"></div>
       <br />
-      <button class="doneBtn" onClick="window.location.reload();">Done</button>
+      <button class="btnDone" onClick="window.location.reload();">Done</button>
     </div>
 
-    <div id="geoModal" onClick="closeDialog('geoModal')">
+    <div class="modal" id="geoModal" onClick="closeDialog('geoModal')">
       <h1>Oops!</h1>
       <h3>
         This service won't work unless you are connected to WiFi. Please connect
@@ -112,6 +117,32 @@
         car to WiFi and then this service will work. Try tethering to your
         phone's hotspot.
       </p>
+      <br />
+    </div>
+
+    <div class="modal" id="aboutModal" onClick="closeDialog('aboutModal')">
+      <h1>About</h1>
+      <h3>
+        Introducing ABetterTheater: Your gateway to an enhanced Tesla media
+        experience, providing seamless access to all your favorite streaming
+        services. With a focus on simplifying the process of accessing
+        fullscreen media, ABetterTheater empowers you through an elegantly
+        designed "Go Fullscreen" button, ensuring quick engagement and an
+        immersive entertainment experience during your parked moments.
+      </h3>
+      <p>
+        Found an issue or bug?
+        <a href="https://github.com/jLynx/ABetterTheater/issues"
+          >Tap here to report an issue</a
+        >
+      </p>
+      <p>
+        This wesbite is fully open source:
+        <a href="https://github.com/jLynx/ABetterTheater"
+          >https://github.com/jLynx/ABetterTheater</a
+        >.
+      </p>
+      <p>Made with ❤️ by <a href="https://jlynx.net">jLynx.net</a>.</p>
       <br />
     </div>
 
